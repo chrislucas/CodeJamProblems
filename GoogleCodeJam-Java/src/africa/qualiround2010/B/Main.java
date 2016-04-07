@@ -18,8 +18,8 @@ public class Main {
 	static PrintWriter writer;
 	
 	public static void run() throws FileNotFoundException {
-		reader = new BufferedReader(new FileReader("B-large-practice.in"));
-		writer = new PrintWriter("output.txt");
+		reader = new BufferedReader(new FileReader("B-small-practice.in"));
+		writer = new PrintWriter("B-small.out");
 		Main.solve();
 		writer.flush();
 		writer.close();
@@ -34,12 +34,15 @@ public class Main {
 				while(tk.hasMoreTokens()) {
 					stack.push(tk.nextToken());
 				}
-				writer.printf("Case #%d:", i+1);
-				writer.printf(" %s", stack.pop());
+				//writer.printf("%s", i > 0 ? "\n" : "");
+				//writer.print("Case #%d: " + i+1);
+				writer.print("Case #" + (i+1) + ": ");
+				//writer.printf("%s", stack.pop());
 				while(!stack.isEmpty()) {
-					writer.printf(" %s", stack.pop());
+					//writer.printf("%s ", stack.pop());
+					writer.print(stack.pop()+" ");
 				}
-				writer.printf("\n");
+				writer.println();
 			}
 		} catch(IOException ioex) {}
 	}
